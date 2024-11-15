@@ -6,6 +6,12 @@ Prerequisites:
 
 Start SurrealDB server and enable scripting function by passing _--allow-scripting_ parameter. See SurrealDB [Capabilites](https://docs.surrealdb.com/docs/security/capabilities/).
 
+Run the following command to start SurrealDB server in memory:
+```sh
+docker run --rm --pull always -p 8000:8000 --name my-surrealdb surrealdb/surrealdb:latest start --user root --pass root
+```
+See: https://surrealdb.com/docs/surrealdb/installation/running/docker
+
 ## Get Start
 
 Once the source code is downloaded, run
