@@ -7,6 +7,7 @@ mod prelude;
 use once_cell::sync::Lazy;
 // use actix_cors::Cors;
 use actix_web::{App, HttpServer};
+use actix_files as fs;
 use surrealdb::engine::remote::ws::{Client, Ws};
 use surrealdb::opt::auth::Root;
 use surrealdb::Surreal;
@@ -44,6 +45,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             .service(update)
             .service(delete)
             .service(list)
+            .service(fs::Files::new("/", "./static").index_file("index.html"))
     })
     .bind(("localhost", PORT))?
     .run()

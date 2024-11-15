@@ -15,7 +15,7 @@ use crate::prelude::*;
 
 #[derive(Debug, Display, Error)]
 enum HttpError {
-    #[display(fmt = "bad request")]
+    #[display("bad request")]
     BadClientData,
 }
 
